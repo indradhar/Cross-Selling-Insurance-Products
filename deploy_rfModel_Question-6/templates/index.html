@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type = 'text/css' href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+     <div>
+	<h1>Predict Market Value</h1>
+	 <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Age" placeholder="Age" required="required" />
+        <input type="text" name="Driving_License" placeholder="Driving_License" required="required" />
+		<input type="text" name="Region_Code" placeholder="Region_Code" required="required" />
+        <input type="text" name="Previously_Insured" placeholder="Previously_Insured" required="required" />
+        <input type="text" name="Annual_Premium" placeholder="Annual_Premium" required="required" />
+        <input type="text" name="Policy_Sales_Channel" placeholder="Policy_Sales_Channel" required="required" />
+        <input type="text" name="Vintage" placeholder="Vintage" required="required" />
+        <input type="text" name="Male" placeholder="Male" required="required" />
+        <input type="text" name="<1 Year" placeholder="<1 Year" required="required" />
+        <input type="text" name=">2 Years" placeholder=">2 Years" required="required" />
+        <input type="text" name="Yes" placeholder="Yes" required="required" />
+        
+        
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+<br>
+   {{ prediction_text }}
+         </div>
+
+ </div>
+
+
+</body>
+</html>
